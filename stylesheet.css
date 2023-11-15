@@ -145,6 +145,13 @@ article{
       background-size: cover;
       background-repeat: no-repeat;
     }
+
+    .section {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
   
     .content-container {
       margin: 20px; 

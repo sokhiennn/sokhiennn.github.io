@@ -123,3 +123,33 @@ article{
     bottom:50;
     position: absolute;
 }
+
+/* for smaller devices */
+@media screen and (max-width: 768px) {
+    nav {
+      text-align: center;
+      padding: 15px 0; 
+    }
+  
+    nav a {
+      display: block;
+      margin-bottom: 10px; 
+    }
+  
+    video {
+      display: none; /* Hide video on smaller devices */
+    }
+  
+    body {
+      background-image: url('images/travel.png'); 
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  
+    .content-container {
+      margin: 20px; 
+      padding: 20px; 
+      height: auto;
+      overflow-y: auto; 
+    }
+}

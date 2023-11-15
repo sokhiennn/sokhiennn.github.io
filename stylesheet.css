@@ -1,0 +1,125 @@
+
+
+nav {
+    text-align: right;
+    width: 100%;
+    z-index:1;
+    padding-right: 30px;
+    position:absolute;
+    background: lightblue;
+    
+}
+
+nav a{
+
+    text-decoration: none;
+    color:black;
+}
+
+nav a.current {
+    background-color: rgb(248, 247, 247); 
+    color: black; 
+}
+
+nav a:hover {
+    background-color: rgb(168, 172, 168);
+    color: black; 
+}
+
+
+video{
+    height:100vh;
+    width:100vw;
+    z-index: -250px;
+    object-fit: cover;
+}
+
+svg {
+    margin-top: -25px;
+    z-index: 5;
+    position:absolute;
+    transition: transform 5s;
+    animation: myfirst 5s linear 2s infinite alternate;
+}
+
+@keyframes myfirst {
+    0% { transform: scale(0.75) rotate(0deg); }
+    20% { transform: scale(1) rotate(0deg); }
+    40% { transform: scale(0.75) rotate(0deg); }
+    60% { transform: scale(1) rotate(0deg); }
+    80% { transform: scale(0.75) rotate(0deg); }
+    100% { transform: scale(0.75) rotate(90deg); }
+}
+
+
+body{
+    font-family: Josefin, sans-serif;
+    overflow:none;
+}
+
+section{
+    position:absolute;
+    bottom: 50;
+}
+
+footer{
+    margin-top:-20px; 
+    text-align: center;
+    width:100%;
+    background: grey;
+    color: black;
+    position: absolute;
+    opacity: 70%;
+}
+article{
+    background: black;
+    opacity: 85%;
+    border: 1px solid white;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.dropbtn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background-color: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.article img {
+    width: 100%;
+    transition: 0.2s;
+}
+
+.article img:hover {
+    filter: blur(2px);
+}
+
+.content-container{
+    margin-left: 400px;
+    margin-right: 400px;
+    text-align: center;
+    background-color: #cabda9;
+    border-radius: 15px;
+    height: 410px;
+    opacity:90%;
+    bottom:50;
+    position: absolute;
+}

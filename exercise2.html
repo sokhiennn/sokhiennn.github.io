@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+    <style>
+        #formData {
+            display: none;
+            font-family: Arial;
+            border: 1px solid black;
+            padding: 10px;
+            background-color: rgb(245, 189, 189);
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myForm">
+        <!-- Two text fields - Name and Email -->
+        <input id="name" type="text" placeholder="Name" value=""><br><br>
+        <input id="email" type="email" placeholder="Email" value=""><br><br>
+        <!-- Two radio buttons for Gender - Male and Female -->
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender" value="male"><br>
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender" value="female"><br><br>
+        <!-- Submit button -->
+        <input type="submit" value="Submit">
+    </form>
+    <br><br>
+
+    <div id="formData"></div>
+
+    <!-- Display form data -->
+    <script src="js/jquery.min.js"></script>
+    <script>
+        // JavaScript to get and display form data
+        $(document).ready(function() {
+            $('#myForm').submit(function(event) {
+                event.preventDefault(); // Prevent default form submission 
+
+                // Get form values
+                const name = $('#name').val();
+                const email = $('#email').val();
+                let gender = $('input[name="gender"]:checked').val();
+
+                // Display form data with fade-in effect
+                const formData = `
+                    <p>You entered:</p>
+                    <p>${name}</p>
+                    <p>${email}</p>
+                    <p>${gender}</p>
+                `;
+                $('#formData').html(formData).fadeIn();
+
+                // Change CSS using jQuery CSS methods
+                $('#formData').css({
+                    'font-family': 'Arial',
+                    'border': '1px solid black',
+                    'padding': '10px',
+                    'background-color': 'rgb(245, 189, 189)'
+                });
+
+                // Slide up form data on mouseover
+                $('#formData').mouseover(function() {
+                    $(this).slideUp();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Me</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh; 
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 2.5em;
+    }
+    img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin-top: 20px;
+    }
+    .description {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+    }
+    .contact-info {
+      margin-top: 50px;
+      font-size: 1.2em;
+      color: #333;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      color: #333;
+      font-size: 1.5em;
+      text-decoration: none;
+    }
+    /* Style for section titles */
+    .section-title {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2em;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="fullpage">
+    <div class="section">
+      <div class="section-title">- About Me -</div>
+      <h1>Sok Hien</h1>
+      <img src="images/sokhien.jpg" class="demo1" alt="Sok Hien">
+      <div class="description demo2"><b>Web Designer, 20 years old</b></div>
+      <div class="animated demo6">Web Designer</div>
+      <br><br>
+      <div class="animated demo3">My name is Sok Hien, and I am a student studying at RP. 
+        As someone who prefers design over coding, <br>
+        I enjoy creating visually appealing content. In my free time, I like to travel, play games, 
+        and sleep.<br> I also have a passion for music and photography. For someone that pursues freedom, 
+        I believe that what<br> is meant to be will be, and what is not meant to be will not be.</div><br>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-title">Contact</div>
+      <div class="contact-info">
+        <p>Email: sokhienng@gmail.com</p>
+        <p>Phone: +65 9751 1154</p>
+        
+      </div>
+      <div class="social-icons">
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+    </div>
+    
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-container">
+    <button onclick="playAnimation()">Play Animation</button>
+    <button onclick="pauseAnimation()">Pause Animation</button>
+    <button onclick="restartAnimation()">Restart Animation</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
+  <script>
+
+var animation1, animation2, animation3;
+
+    $(document).ready(function () {
+      $('#fullpage').fullpage({
+        sectionsColor: ['lightgreen', 'lightpink'], // Set section colors as needed
+        anchors: ['about', 'contact'], // Anchors for each section
+        afterLoad: function (origin, destination, direction) {
+          if (destination.index == 0) { // Callback for first section 
+            // Anime.js animations for the first section goes here
+            var animation1 = anime({
+              targets: ['.demo1', 'h1', '.demo2', '.demo6', '.demo3'],
+              translateY: 0,
+              rotate: -720,
+              opacity: [0, 1],
+              delay: 500,
+              direction: 'alternate',
+              loop: false, 
+              easing: 'linear'
+              
+            });
+            animation1.play(); 
+          } else if (destination.index == 1) { // Callback for second section (Contact)
+            // Your Anime.js animations for the second section goes here
+            var animation2 = anime({
+              targets: ['.contact-info', '.social-icons'],
+              rotate:360,
+              direction: 'alternate',
+              loop:'true',
+              autoplay:'true',
+              delay: 500,
+              easing: 'linear'
+              
+            });
+            animation2.play(); 
+          }
+          
+        }
+
+        
+        
+      });
+    });
+
+
+  anime({
+    targets: ['.demo2'],
+    innerHTML: [0, 20],
+    easing: 'linear',
+    round: 1,
+    duration: 2000
+  });
+  </script>
+</body>
+</html>

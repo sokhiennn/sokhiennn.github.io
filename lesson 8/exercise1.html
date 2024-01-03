@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Me</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 2.5em;
+    }
+    img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin-top: 20px;
+    }
+    .description {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+    }
+    .animated {
+      display: inline-block;
+      margin: 20px;
+      font-size: 1.5em;
+    
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #c2d8f0;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #c2d8f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sok Hien</h1>
+  <img src="images/sokhien.jpg" class="demo1" alt="Sok Hien">
+  <div class="description demo2">Web Designer, 20 years old</div>
+  <div class="animated demo6">Web Designer</div>
+  <div class="animated demo3">My name is Sok Hien, and I am a student studying at RP. 
+    As someone who prefers design over coding,
+    I enjoy creating visually appealing content. In my free time, I like to travel, play games, 
+    and sleep. I also have a passion for music and photography. For someone that pursues freedom,
+    I believe that what is meant to be will be, and what is not meant to be will not be.</div>
+    <a href="#" class="btn play">Play Animation</a>
+    <a href="#" class="btn pause">Pause Animation</a>
+    <a href="#" class="btn restart">Restart Animation</a>
+
+ 
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script>
+  var animation1 = anime({
+    targets: ['.demo1', 'h1', '.demo2', '.demo6', '.demo3'],
+    translateX: 250,
+    rotate: 0,
+    opacity: [0, 1],
+    delay: 500
+  });
+
+  var animation2 = anime({
+    targets: ['.demo3', '.demo6'],
+    translateY: -300,
+    rotate: 180,
+    delay: anime.stagger(300, { start: 1000 }),
+    direction: 'alternate'
+  });
+
+  var animation3 = anime({
+    targets: ['.demo2'],
+    translateX: 300,
+    scale: 2,
+    easing: 'easeInOutExpo',
+    direction: 'alternate',
+    duration: 4000,
+    loop: true,
+    autoplay: false
+  });
+
+  document.querySelector('.play').onclick = function() {
+    animation1.play();
+    animation2.play();
+    animation3.play();
+  };
+
+  document.querySelector('.pause').onclick = function() {
+    animation1.pause();
+    animation2.pause();
+    animation3.pause();
+  };
+
+  document.querySelector('.restart').onclick = function() {
+    animation1.restart();
+    animation2.restart();
+    animation3.restart();
+  };
+
+  anime({
+    targets: ['.demo2'],
+    innerHTML: [0, 20],
+    easing: 'linear',
+    round: 1,
+    duration: 2000
+  });
+</script>
+
+</body>
+</html>
